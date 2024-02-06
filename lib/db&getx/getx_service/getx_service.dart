@@ -48,7 +48,6 @@ class Studentcontoller extends GetxController {
 
   Future<void> updatestudent(int id, String name, String age, String phone,
       String place, String image) async {
-    print('id===$id');
     final data = {
       'name': name,
       'age': age,
@@ -58,6 +57,5 @@ class Studentcontoller extends GetxController {
     };
     await _db.update('student', data, where: 'id=?', whereArgs: [id]);
     print('updated');
-    getallstudent();
   }
 }
